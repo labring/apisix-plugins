@@ -69,7 +69,7 @@ The following configuration process will take the code `cmd/go-runner` in the `a
 
 ```yaml
 ext-plugin:
-  cmd: ["/path/to/apisix-go-plugin-runner/go-runner", "run"]
+  cmd: ["/path/to/apisix-go-plugins-runner/go-plugins", "run"]
 ```
 
 With the above configuration, Apache APISIX pulls up `go-runner` when it starts and closes `go-runner` when it stops.

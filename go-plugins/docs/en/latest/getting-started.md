@@ -50,8 +50,8 @@ We will also support loading pre-compiled plugins through the Go Plugin mechanis
 ### Developing with the Go Runner SDK
 
 ```bash
-$ tree cmd/go-runner
-cmd/go-runner
+$ tree cmd/go-plugins
+cmd/go-plugins
 ├── main.go
 ├── main_test.go
 ├── plugins
@@ -90,7 +90,7 @@ Since `main.go` imports the plugins package,
 ```go
 import (
   ...
-	_ "github.com/apache/apisix-go-plugin-runner/cmd/go-runner/plugins"
+	_ "github.com/apache/apisix-go-plugins-runner/cmd/go-plugins/plugins"
   ...
 )
 ```

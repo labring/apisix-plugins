@@ -145,7 +145,7 @@ func newRunCommand() *cobra.Command {
 
 func NewCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:     "apisix-go-plugin-runner [command]",
+		Use:     "apisix-go-plugins-runner [command]",
 		Long:    "The Plugin runner to run Go plugins",
 		Version: shortVersion(),
 	}
