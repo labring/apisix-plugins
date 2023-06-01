@@ -14,6 +14,13 @@ jobs:
   dockerize-apisix-plugins:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -24,8 +31,8 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/${{ github.repository }}/apisix
-            docker.io/${{ env.DOCKER_USERNAME }}/apisix
+            ghcr.io/${{ github.repository }}
+            docker.io/${{ secrets.DOCKER_USERNAME }}/apisix
           # https://github.com/docker/metadata-action#typesemver
           tags: |
             type=raw,value=latest,enable=true
@@ -47,7 +54,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.repository }}
+          username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
