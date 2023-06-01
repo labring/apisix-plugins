@@ -14,6 +14,13 @@ jobs:
   dockerize-apisix-plugins:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       - uses: actions/checkout@v3
         with:
