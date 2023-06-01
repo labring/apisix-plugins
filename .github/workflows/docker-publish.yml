@@ -24,7 +24,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ${{ github.repository }}
+            ghcr.io/${{ github.repository }}
             docker.io/${{ secrets.DOCKER_USERNAME }}/apisix
           # https://github.com/docker/metadata-action#typesemver
           tags: |
