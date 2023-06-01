@@ -25,7 +25,7 @@ jobs:
         with:
           images: |
             ghcr.io/${{ github.repository }}/apisix
-            docker.io/${{ env.DOCKER_USERNAME }}/apisix
+            docker.io/${{ secrets.DOCKER_USERNAME }}/apisix
           # https://github.com/docker/metadata-action#typesemver
           tags: |
             type=raw,value=latest,enable=true
