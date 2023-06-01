@@ -24,7 +24,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/${{ github.repository }}/apisix
+            ghcr.io/${{ github.actor }}/apisix
             docker.io/${{ secrets.DOCKER_USERNAME }}/apisix
           # https://github.com/docker/metadata-action#typesemver
           tags: |
@@ -47,7 +47,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.repository }}
+          username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
