@@ -31,8 +31,8 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/${{ github.repository_owner }}/apisix-plugins
-            docker.io/${{ secrets.DOCKER_USERNAME }}/apisix-plugins
+            ghcr.io/${{ github.repository_owner }}/apisix-with-plugins
+            docker.io/${{ secrets.DOCKER_USERNAME }}/apisix-with-plugins
           # https://github.com/docker/metadata-action#typesemver
           tags: |
             type=raw,value=latest,enable=true
