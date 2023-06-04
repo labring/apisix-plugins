@@ -39,6 +39,7 @@ jobs:
           tags: |
             type=raw,value=latest,enable=true
             type=sha,enable=true,format=short
+            type=ref,enable=true,event=tag
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
