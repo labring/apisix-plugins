@@ -8,6 +8,8 @@ RUN cd cmd/go-runner && CGO_ENABLED=0 GOOS=linux go build -o /go-plugins .
 
 FROM apache/apisix:3.2.0-debian
 
+CMD ["bash"]
+
 RUN mkdir /runner && chmod +x /runner
 
 COPY --from=build /go-plugins /runner/
