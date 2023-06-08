@@ -14,8 +14,6 @@ RUN mkdir /runner && chmod +x /runner
 
 COPY --from=build /go-plugins /runner/
 
-USER apisix
-
 WORKDIR /usr/local/apisix
 
 EXPOSE 9080/tcp
