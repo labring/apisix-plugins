@@ -51,7 +51,7 @@ func (t *TryPath) RequestFilter(conf interface{}, w http.ResponseWriter, r pkgHT
 
 	// loop path
 	for index := 0; index < pathLen; index++ {
-		newPath := strings.ReplaceAll(cfg.Paths[index], "$uri", string(r.Path())) + r.Args().Encode()
+		newPath := strings.ReplaceAll(cfg.Paths[index], "$uri", string(r.Path()))
 
 		// if the last path, directly set path
 		if index == pathLen-1 {
