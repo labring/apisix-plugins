@@ -83,8 +83,8 @@ func tryPath(host, path string) (bool, error) {
 		return false, err
 	}
 	defer resp.Body.Close()
-	if resp.StatusCode != 404 && resp.StatusCode != 403 {
-		return true, nil
+	if resp.StatusCode == 404 || resp.StatusCode == 403 || resp.StatusCode == 400 || resp.Header.Get("Content-Type") == "folder" {
+		return false, nil
 	}
-	return false, nil
+	return true, nil
 }
