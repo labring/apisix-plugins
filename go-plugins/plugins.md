@@ -14,6 +14,6 @@ value: value is a string (serialized JSON object) that contains `paths` and `hos
 ```json
 {
   "name": "try-path",
-  "value": "{\"path\":[\"$uri\",\"$uri/\",\"index.html\"],\"host\":\"http://hostname\"}"
+  "value": "{\"paths\":[\"$uri\", \"$uri/\", \"$uriindex.html\", \"$uri/index.html\"], \"host\":\"http://hostname\"}"
 }
 ```
